@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "895470137066",
+    "firebase_url": "https://rcit-helpdesk-default-rtdb.firebaseio.com",
+    "project_id": "rcit-helpdesk",
+    "storage_bucket": "rcit-helpdesk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895470137066:android:8be8844eabdecd636e3193",
+        "android_client_info": {
+          "package_name": "com.traceme.uploadrcitdata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895470137066-kbrb19aa8arc2gs8deb4l0gthmokpek2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.traceme.uploadrcitdata",
+            "certificate_hash": "26a3d48a3ae1f52e68c841e6c3700a6cd0d362af"
+          }
+        },
+        {
+          "client_id": "895470137066-vhmr79p2sbc017tg829eh9l13622s7d2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_N1M79LdXn_Eidstz6gmRwwfJS0Fp4pw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895470137066-vhmr79p2sbc017tg829eh9l13622s7d2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

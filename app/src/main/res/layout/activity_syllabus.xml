@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="#333"
+    tools:context=".SyllabusActivity">
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/semCard"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardBackgroundColor="#58C8D6"
+       app:cardUseCompatPadding="true"
+       app:cardElevation="5dp"
+       app:cardCornerRadius="5dp">
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Choose Semester:"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="10dp"
+                   android:textSize="25sp"
+                   android:textColor="@color/black"/>
+
+               <Spinner
+                   android:id="@+id/semSpinner"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginRight="10dp"
+                   android:popupBackground="@color/material_dynamic_neutral_variant30"/>
+
+
+
+
+           </LinearLayout>
+
+
+   </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#58C8"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginTop="25dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Branch:"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"/>
+
+
+
+            <RadioGroup
+                android:id="@+id/radioGrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioCse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CSE"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+            <RadioButton
+                android:id="@+id/radioCivil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CIVIL"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+            <RadioButton
+                android:id="@+id/radioElectrical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ELECTRICAL"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioElectronics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="ELECTRONICS"/>
+                <RadioButton
+                    android:id="@+id/radioMechanical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="MECHANICAL"/>
+        </RadioGroup>
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/uploadImgBtn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/baseline_cloud_upload_24"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/uploadEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/uploadImgBtn"
+            android:layout_marginTop="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/uploadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#58C"
+            android:text="Upload"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/uploadEditText"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
