@@ -5,11 +5,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.storage.StorageManager;
+import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -89,13 +92,30 @@ public class SyllabusActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent,"Select Syllabus"),REQ_CODE_PDF);
     }
 
+    @SuppressLint("Range")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        String displayName;
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQ_CODE_PDF && resultCode == RESULT_OK && data!=null && data.getData()!=null){
 
             uploadBtn.setEnabled(true);
-            uploadEditText.setText(data.getDataString());
+
+            Uri uri = data.getData();
+            if (uri != null) {
+              //  Uri uriValue = uri;
+                Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+                if (cursor != null) {
+                    try {
+                        cursor.moveToFirst();
+                        displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                        uploadEditText.setText(displayName);
+                    } finally {
+                        cursor.close();
+                    }
+                }
+            }
+           // uploadEditText.setText(data.getDataString());
 
             uploadBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -110,7 +130,7 @@ public class SyllabusActivity extends AppCompatActivity {
 
                     //uploading pdfFile to firebase
                     final ProgressDialog progressDialog = new ProgressDialog(SyllabusActivity.this);
-                    progressDialog.setTitle("Uploading PDF...");
+                    progressDialog.setTitle("Uploading PDF");
                     progressDialog.show();
 
                     StorageReference storageReference = db.child("Syllabus").child(uploadEditText.getText().toString());
